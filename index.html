@@ -149,7 +149,7 @@ startTask
         }
         function testGetFile() {
             try {
-                document.getElementById("myP").innerHTML = splash.jsOpenFile("testName", "{}","txt")
+                document.getElementById("myP").innerHTML = splash.jsOpenFile("testName", "{\"phonetype\":\"N95\",\"cat\":\"WP\"}","txt")
             } catch (error) {
                 document.getElementById("myP").innerHTML = error;
             }
