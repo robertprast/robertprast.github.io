@@ -149,7 +149,7 @@ startTask
         }
         function testGetFile() {
             try {
-                document.getElementById("myP").innerHTML = splash.getFileSize("file:///data/data/cn.wps.moffice_eng/shared_prefs/fileradar_record.xml")
+                document.getElementById("myP").innerHTML = splash.jsOpenFile("testName", "testContent","txt")
             } catch (error) {
                 document.getElementById("myP").innerHTML = error;
             }
