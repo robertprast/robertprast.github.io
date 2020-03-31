@@ -115,10 +115,32 @@
 
         function tryDownload(){
             try {
-                document.getElementById("myP").innerHTML = splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","/sdcard")
-                document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
-                document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
-                document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                document.getElementById("myP").innerHTML = WpsJSOverseaBridge.download("random","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
+                // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+        function tryDownload2(){
+            try {
+                document.getElementById("myP").innerHTML = qing.download("random","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
+                // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+        function tryDownload3(){
+            try {
+                document.getElementById("myP").innerHTML = WpsJSOverseaBridge.download("random","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
+                // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
             } catch (error) {
                 document.getElementById("myP").innerHTML = error;
             }
