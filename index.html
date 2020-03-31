@@ -88,6 +88,30 @@
                 document.getElementById("myP").innerHTML = error;
             }
         }
+
+        function requestSess(){
+            try {
+                document.getElementById("myP").innerHTML = splash.requestSession();
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+        function requestSessUserInfo(){
+            try {
+                document.getElementById("myP").innerHTML = splash.requestSessionUserInfo();
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+        function trackingInfo(){
+            try {
+                document.getElementById("myP").innerHTML = splash.trackingInfo();
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
     </script>
 
     <button onclick="findAllVariables()">
@@ -120,6 +144,21 @@
     <br>
     <button onclick="getUserMail()">
         Call Get User Mail - Native Function
+    </button>
+
+    <br>
+    <button onclick="requestSess()">
+        Call requestSess - Native Function
+    </button>
+
+    <br>
+    <button onclick="requestSessUserInfo()">
+        Call requestSessUserInfo - Native Function
+    </button>
+
+    <br>
+    <button onclick="trackingInfo()">
+        Call trackingInfo - Native Function
     </button>
 
     <p id="myP">
