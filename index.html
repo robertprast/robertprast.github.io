@@ -32,7 +32,7 @@ startTask
     <h1>WPS Exploits@@</h1>
     <script type="text/javascript">
         var string = "";
-
+        //APPS JS CALLBACKS
         function appJs_loginCallback(x,y){
             try {
                 document.getElementById("myP").innerHTML = x+"\n\n"+y;
@@ -40,6 +40,26 @@ startTask
                 document.getElementById("myP").innerHTML = error;
             }
         }
+
+
+        function appJs_sessionCallback(x){
+            try {
+                document.getElementById("myP").innerHTML = x;
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+        function appJs_sessionCallback(x,y){
+            try {
+                document.getElementById("myP").innerHTML = x+"\n\n"+y;
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+
+        //HELPER FUNCTIONS
         function findAllVariables() {
             for (let variable in window) {
                 if (window.hasOwnProperty(variable)) {
