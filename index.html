@@ -107,7 +107,18 @@
 
         function trackingInfo(){
             try {
-                document.getElementById("myP").innerHTML = splash.trackingInfo();
+                document.getElementById("myP").innerHTML = splash.trackingInfo("wps_sid");
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+        function tryDownload(){
+            try {
+                document.getElementById("myP").innerHTML = splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","/sdcard")
+                document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
+                document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
             } catch (error) {
                 document.getElementById("myP").innerHTML = error;
             }
@@ -160,6 +171,8 @@
     <button onclick="trackingInfo()">
         Call trackingInfo - Native Function
     </button>
+
+
 
     <p id="myP">
 
