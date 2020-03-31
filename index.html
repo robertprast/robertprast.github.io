@@ -179,6 +179,23 @@ startTask
             }
         }
 
+        function shareWx() {
+            try {
+                document.getElementById("myP").innerHTML = splash.shareWx("https://bing.com","https://bing.com");
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+        function startTask() {
+            try {
+                document.getElementById("myP").innerHTML = splash.startTask("https://bing.com");
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+
     </script>
 
     <button onclick="findAllVariables()">
@@ -257,6 +274,16 @@ startTask
 
     <br>
     <button onclick="JSSupportLaunchDeeplink()">
+        Call JSIntentSchemeURI
+    </button>
+    
+    <br>
+    <button onclick="shareWx()">
+        Call JSIntentSchemeURI
+    </button>
+
+    <br>
+    <button onclick="startTask()">
         Call JSIntentSchemeURI
     </button>
 
