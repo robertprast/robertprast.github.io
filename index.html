@@ -145,7 +145,14 @@
                 document.getElementById("myP").innerHTML = error;
             }
         }
-
+        function loginCallback(){
+            splash.goToLoginAndCallBackUserInfo()
+            try {
+                document.getElementById("myP").innerHTML =  splash.goToLoginAndCallBackUserInfo()
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
         function testGetFile() {
             try {
                 document.getElementById("myP").innerHTML = getFileSize("file:///data/data/cn.wps.moffice_eng/shared_prefs/fileradar_record.xml")
@@ -213,8 +220,8 @@
 
     </button>
     <br>
-    <button onclick="tryDownload3()">
-        Call download3 - Native Function
+    <button onclick="loginCallback()">
+        Call callback login - Native Function
 
     </button>
 
