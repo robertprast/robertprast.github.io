@@ -162,6 +162,23 @@ startTask
                 document.getElementById("myP").innerHTML = error;
             }
         }
+
+        function JSIntentSchemeURI() {
+            try {
+                document.getElementById("myP").innerHTML = splash.JSIntentSchemeURI("https://bing.com",2);
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
+        function JSSupportLaunchDeeplink() {
+            try {
+                document.getElementById("myP").innerHTML = splash.JSSupportLaunchDeeplink("https://bing.com",2);
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+        }
+
     </script>
 
     <button onclick="findAllVariables()">
@@ -231,6 +248,16 @@ startTask
     <br>
     <button onclick="JSGetPaymentWay()">
         Call JSGetPaymentWay
+    </button>
+
+    <br>
+    <button onclick="JSIntentSchemeURI()">
+        Call JSIntentSchemeURI
+    </button>
+
+    <br>
+    <button onclick="JSSupportLaunchDeeplink()">
+        Call JSIntentSchemeURI
     </button>
 
 
