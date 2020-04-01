@@ -252,7 +252,7 @@ startTask
                 document.getElementById("myP").innerHTML += JSON.stringify(wpsBridgeEvent)+"\n\n"
                 document.getElementById("myP").innerHTML += JSON.stringify(Invoker)+"\n\n"
                 document.getElementById("myP").innerHTML += JSON.stringify(wps)+"\n\n"
-                document.getElementById("myP").innerHTML += JSON.stringify(__wpsoffice_enviroment)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(__wpsoffice_environment)+"\n\n"
                 document.getElementById("myP").innerHTML += JSON.stringify(owWps)+"\n\n"
                 document.getElementById("myP").innerHTML += JSON.stringify(canIUseApis)+"\n\n"
                 document.getElementById("myP").innerHTML += JSON.stringify(__wpsoffice_app_ver)+"\n\n"
@@ -260,6 +260,16 @@ startTask
                 document.getElementById("myP").innerHTML = error;
             }
             
+        }
+
+        function printShit2(){
+            try {
+                document.getElementById("myP").innerHTML = "START 2\\n";
+                document.getElementById("myP").innerHTML += JSON.stringify(__wpsoffice_environment)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(__wpsoffice_app_ver)+"\n\n"
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
         }
     </script>
 
@@ -383,6 +393,11 @@ startTask
     <br>
     <button onclick='printShit()'>
         List ALL
+    </button>
+
+    <br>
+    <button onclick='printShit2()'>
+        List Shit2
     </button>
 
 
