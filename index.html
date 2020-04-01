@@ -242,26 +242,25 @@ startTask
         function printShit(){
             try {
                 document.getElementById("myP").innerHTML = "START\\n";
-                document.getElementById("myP").innerHTML += (wpsCreateFunction)+"\n\n"
-                document.getElementById("myP").innerHTML += (wpsS2i)+"\n\n"
-                document.getElementById("myP").innerHTML += (wpsVersionCmp)+"\n\n"
-                document.getElementById("myP").innerHTML += (SDKVersion)+"\n\n"
-                document.getElementById("myP").innerHTML += (WpsPlatformType)+"\n\n"
-                document.getElementById("myP").innerHTML += (wpsSdkRegister)+"\n\n"
-                document.getElementById("myP").innerHTML += (_listeners)+"\n\n"
-                document.getElementById("myP").innerHTML += (wpsBridgeEvent)+"\n\n"
-                document.getElementById("myP").innerHTML += (Invoker)+"\n\n"
-                document.getElementById("myP").innerHTML += (wps)+"\n\n"
-                document.getElementById("myP").innerHTML += (_wpsoffice_enviroment)+"\n\n"
-                document.getElementById("myP").innerHTML += (owWps)+"\n\n"
-                document.getElementById("myP").innerHTML += (canIUseApis)+"\n\n"
-                document.getElementById("myP").innerHTML += (__wpsoffice_app_ver)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(wpsCreateFunction)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(wpsS2i)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(wpsVersionCmp)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(SDKVersion)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(WpsPlatformType)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(wpsSdkRegister)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(_listeners)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(wpsBridgeEvent)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(Invoker)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(wps)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(_wpsoffice_enviroment)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(owWps)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(canIUseApis)+"\n\n"
+                document.getElementById("myP").innerHTML += JSON.stringify(__wpsoffice_app_ver)+"\n\n"
             } catch (error) {
                 document.getElementById("myP").innerHTML = error;
             }
             
         }
-
     </script>
 
     <button onclick="findAllVariables()">
@@ -285,7 +284,10 @@ startTask
         Get Wps
     </button>
     <br>
-
+    <button onclick="getObj(wpsAndroidBridge)">
+        Get WpsBRIDGE
+    </button>
+    <br>
     <h6>Just basic JSInterface stuff -> can make a custom toast!</h6>
     <button onclick="call()">
         Call JSGetClientInfo() - Native Function
