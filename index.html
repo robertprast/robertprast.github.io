@@ -239,6 +239,28 @@ startTask
             }
         }
 
+        function printShit(){
+            try {
+                document.getElementById("myP").innerHTML = "START\\n";
+                document.getElementById("myP").innerHTML += (wpsCreateFunction)+"\n\n"
+                document.getElementById("myP").innerHTML += (wpsS2i)+"\n\n"
+                document.getElementById("myP").innerHTML += (wpsVersionCmp)+"\n\n"
+                document.getElementById("myP").innerHTML += (SDKVersion)+"\n\n"
+                document.getElementById("myP").innerHTML += (WpsPlatformType)+"\n\n"
+                document.getElementById("myP").innerHTML += (wpsSdkRegister)+"\n\n"
+                document.getElementById("myP").innerHTML += (_listeners)+"\n\n"
+                document.getElementById("myP").innerHTML += (wpsBridgeEvent)+"\n\n"
+                document.getElementById("myP").innerHTML += (Invoker)+"\n\n"
+                document.getElementById("myP").innerHTML += (wps)+"\n\n"
+                document.getElementById("myP").innerHTML += (_wpsoffice_enviroment)+"\n\n"
+                document.getElementById("myP").innerHTML += (owWps)+"\n\n"
+                document.getElementById("myP").innerHTML += (canIUseApis)+"\n\n"
+                document.getElementById("myP").innerHTML += (__wpsoffice_app_ver)+"\n\n"
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+            
+        }
 
     </script>
 
@@ -353,9 +375,11 @@ startTask
     </button>
 
     <br>
-    <button onclick='document.getElementById("myP").innerHTML = (SDKVersion)'>
+    <button onclick='printShit()'>
         List SDKVersion
     </button>
+
+
 
     
 
