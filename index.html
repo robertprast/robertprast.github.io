@@ -86,9 +86,10 @@ startTask
 
         function requestSessUserInfo() {
             try {
-                document.getElementById("myP").innerHTML = splash.requestSessionUserInfo();
+                document.getElementById("myP").innerHTML = "CALLING NOW!";
+                document.getElementById("myP").innerHTML += splash.requestSessionUserInfo();
             } catch (error) {
-                document.getElementById("myP").innerHTML = "ERROR HERE\n"+error;
+                document.getElementById("myP").innerHTML += "ERROR HERE\n"+error;
             }
         }
         function appJs_sessionCallback(x, y) {
