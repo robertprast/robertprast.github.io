@@ -11,9 +11,9 @@ Java.perform(function x() { //Silently fails without the sleep from the python c
     var dgw = Java.use("dgw");
     dgw.jR.implementation = function (x) {
         console.log("IN DGW with str value of "+x)
-        x="https://attacker.com\\@wps.com"
+        x="https://robertprast.github.io\\@wps.com"
         console.log(this.jR(x))
-        x="https://attacker.com%5C%5C@wps.com"
+        x="https://robertprast.github.io%5C%5C@wps.com"
         console.log(this.jR(x))
     };
 
