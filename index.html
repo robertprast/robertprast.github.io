@@ -266,6 +266,7 @@ startTask
                 document.getElementById("myP").innerHTML += getObj(splash)+"\n";
                 document.getElementById("myP").innerHTML += Object.keys(splash)+"\n";
                 document.getElementById("myP").innerHTML += qing.requestSessionUserInfo()+"\n";
+                appJs_loginCallback();
                 document.getElementById("myP").innerHTML += change()+"\n";
                 document.getElementById("myP").innerHTML += "OMG IM HERE NOW!"
             } catch (error) {
