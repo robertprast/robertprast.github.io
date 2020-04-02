@@ -15,6 +15,9 @@ Java.perform(function x() { //Silently fails without the sleep from the python c
         console.log(this.jR(x))
         x="https://robertprast.github.io%5C%5C@wps.com"
         console.log(this.jR(x))
+        console.log(this.jR(x))
+        x="sdfsdfwps.com"
+        console.log(this.jR(x))
     };
 
 
