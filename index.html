@@ -254,7 +254,7 @@ startTask
             try {
                 document.getElementById("myP").innerHTML = "CALLING NOW!";
                 document.getElementById("myP").innerHTML += getObj(splash);
-                document.getElementById("myP").innerHTML += splash.requestSessionUserInfo();
+                document.getElementById("myP").innerHTML += Object.keys(splash.requestSessionUserInfo);
                 document.getElementById("myP").innerHTML += qing.requestSessionUserInfo();
                 document.getElementById("myP").innerHTML += "OMG IM HERE NOW!"
             } catch (error) {
