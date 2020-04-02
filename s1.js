@@ -11,10 +11,13 @@ Java.perform(function x() { //Silently fails without the sleep from the python c
     var dgw = Java.use("dgw");
     dgw.jR.implementation = function (x) {
         console.log("IN DGW with str value of "+x)
+        console.log(x)
+        console.log(this.jR(x))
         x="https://robertprast.github.io\\@wps.com"
+        console.log(x)
         console.log(this.jR(x))
         x="https://robertprast.github.io%5C%5C@wps.com"
-        console.log(this.jR(x))
+        console.log(x)
         console.log(this.jR(x))
         x="sdfsdfwps.com"
         console.log(this.jR(x))
@@ -28,10 +31,10 @@ Java.perform(function x() { //Silently fails without the sleep from the python c
     };
 
     console.log("HEY WHATS UP!")
-    var OnlineParamProtoBuf = Java.use("afbs$a");
-    console.log(OnlineParamProtoBuf);
-    OnlineParamProtoBuf.a.overload("T t, byte[] bArr").implementation = function (y,x) {
-        console.log("IN OnlineParamtools with int value of "+x)
-    };
+    // var OnlineParamProtoBuf = Java.use("afbs$a");
+    // console.log(OnlineParamProtoBuf);
+    // OnlineParamProtoBuf.a.overload("T t, byte[] bArr").implementation = function (y,x) {
+    //     console.log("IN OnlineParamtools with int value of "+x)
+    // };
 });
 
