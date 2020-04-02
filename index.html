@@ -172,8 +172,13 @@ startTask
     </button>
 
     <br>
-    <button onclick=' document.getElementById("myP").innerHTML=JSON.stringify(splash)'>
+    <button onclick=' document.getElementById("myP").innerHTML=Object.keys(splash)'>
         TEST3
+    </button>
+
+    <br>
+    <button onclick='change()'>
+        TEST4
     </button>
 
 
@@ -190,6 +195,10 @@ startTask
 
     <script type="text/javascript">
         var string = "";
+
+        function change(){
+            document.getElementById("myP").innerHTML += "WHJY!!!!!!!!"
+        }
 
         //APPS JS CALLBACKS
         function loginCallback() {
