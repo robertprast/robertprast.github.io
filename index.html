@@ -252,6 +252,15 @@ startTask
 
 
         function requestSessUserInfo() {
+            function appJs_sessionCallback(x, y) {
+            try {
+                document.getElementById("myP").innerHTML += "NOPE  I AM NOW HERE@"
+                document.getElementById("myP").innerHTML += x + "\n\n" + y;
+            } catch (error) {
+                document.getElementById("myP").innerHTML = error;
+            }
+            }
+
             try {
                 document.getElementById("myP").innerHTML = "CALLING NOW!";
                 document.getElementById("myP").innerHTML += getObj(splash)+"\n";
@@ -263,6 +272,8 @@ startTask
                 document.getElementById("myP").innerHTML += "ERROR HERE\n"+error;
             }
         }
+        
+        
         function appJs_sessionCallback(x, y) {
             try {
                 document.getElementById("myP").innerHTML += "NOPE  I AM NOW HERE@"
@@ -271,8 +282,6 @@ startTask
                 document.getElementById("myP").innerHTML = error;
             }
         }
-
-        
 
         
 
