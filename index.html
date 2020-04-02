@@ -197,7 +197,8 @@ startTask
         var string = "";
 
         function change(){
-            document.getElementById("myP").innerHTML += "WHJY!!!!!!!!"
+            return "WHY!!!!!!!"
+            // document.getElementById("myP").innerHTML += "WHJY!!!!!!!!"
         }
 
         //APPS JS CALLBACKS
@@ -253,9 +254,10 @@ startTask
         function requestSessUserInfo() {
             try {
                 document.getElementById("myP").innerHTML = "CALLING NOW!";
-                document.getElementById("myP").innerHTML += getObj(splash);
-                document.getElementById("myP").innerHTML += Object.keys(splash.requestSessionUserInfo);
-                document.getElementById("myP").innerHTML += qing.requestSessionUserInfo();
+                document.getElementById("myP").innerHTML += getObj(splash)+"\n";
+                document.getElementById("myP").innerHTML += Object.keys(splash)+"\n";
+                document.getElementById("myP").innerHTML += qing.requestSessionUserInfo()+"\n";
+                document.getElementById("myP").innerHTML += change()+"\n";
                 document.getElementById("myP").innerHTML += "OMG IM HERE NOW!"
             } catch (error) {
                 document.getElementById("myP").innerHTML += "ERROR HERE\n"+error;
