@@ -270,6 +270,7 @@ startTask
                 document.getElementById("myP").innerHTML += "wps: "+getMethodsNames(wps)+"\n"
                 document.getElementById("myP").innerHTML += "owWps: "+getMethodsNames(owWps)+"\n"
                 document.getElementById("myP").innerHTML += "canIUseApis: "+getMethodsNames(canIUseApis)+"\n"
+                document.getElementById("myP").innerHTML += "wps Call get userinfo: "+wps.getUserInfo+"\n"
             } catch (error) {
                 document.getElementById("myP").innerHTML = error;
             }
