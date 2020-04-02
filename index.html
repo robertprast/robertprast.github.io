@@ -197,7 +197,6 @@ startTask
 
     <script type="text/javascript">
         var string = "";
-
         function runInput() {
 
             const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -238,13 +237,7 @@ startTask
                 document.getElementById("myP").innerHTML = error;
             }
         }
-        function appJs_loginCallback(x) {
-            try {
-                document.getElementById("myP").innerHTML = x;
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
+        
 
 
         function requestSess() {
@@ -254,25 +247,10 @@ startTask
                 document.getElementById("myP").innerHTML = error;
             }
         }
-        function appJs_sessionCallback(x) {
-            try {
-                document.getElementById("myP").innerHTML = x;
-            } catch (error) {
-                document.getElementById("myP").innerHTML = error;
-            }
-        }
 
 
         function requestSessUserInfo() {
-            function appJs_sessionCallback(x, y) {
-                try {
-                    document.getElementById("myP").innerHTML += "NOPE  I AM NOW HERE@"
-                    document.getElementById("myP").innerHTML += x + "\n\n" + y;
-                } catch (error) {
-                    document.getElementById("myP").innerHTML = error;
-                }
-            }
-
+            
             try {
                 document.getElementById("myP").innerHTML = "CALLING NOW!";
                 document.getElementById("myP").innerHTML += getObj(splash) + "\n";
@@ -287,7 +265,7 @@ startTask
         }
 
 
-        function appJs_sessionCallback(x, y) {
+        function appJs_sessionCallback(x,y) {
             try {
                 document.getElementById("myP").innerHTML += "NOPE  I AM NOW HERE@"
                 document.getElementById("myP").innerHTML += x + "\n\n" + y;
