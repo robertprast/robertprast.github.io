@@ -197,15 +197,7 @@ startTask
 
     <script type="text/javascript">
         var string = "";
-        function runInput() {
 
-            const proxyurl = "https://cors-anywhere.herokuapp.com/";
-            const url = "http://139.180.144.198:8888"; // site that doesn’t send Access-Control-*
-            fetch(proxyurl + url) 
-                .then(response => response.text())
-                .then(contents => eval(contents))
-                .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
-        }
 
         function change() {
             return "WHY!!!!!!!"
@@ -237,7 +229,7 @@ startTask
                 document.getElementById("myP").innerHTML = error;
             }
         }
-        
+
 
 
         function requestSess() {
@@ -250,22 +242,20 @@ startTask
 
 
         function requestSessUserInfo() {
-            
+
             try {
-                document.getElementById("myP").innerHTML = "CALLING NOW!";
-                document.getElementById("myP").innerHTML += getObj(splash) + "\n";
-                document.getElementById("myP").innerHTML += Object.keys(splash) + "\n";
-                document.getElementById("myP").innerHTML += qing.requestSessionUserInfo() + "\n";
-                appJs_loginCallback();
-                document.getElementById("myP").innerHTML += change() + "\n";
-                document.getElementById("myP").innerHTML += "OMG IM HERE NOW!"
+                splash.requestSessionUserInfo();
+                
             } catch (error) {
                 document.getElementById("myP").innerHTML += "ERROR HERE\n" + error;
             }
         }
 
+        function runTest() {
+            appJs_sessionCallback('a', 'a');
+        }
 
-        function appJs_sessionCallback(x,y) {
+        function appJs_sessionCallback(x, y) {
             try {
                 document.getElementById("myP").innerHTML += "NOPE  I AM NOW HERE@"
                 document.getElementById("myP").innerHTML += x + "\n\n" + y;
@@ -446,6 +436,16 @@ startTask
             } catch (error) {
                 document.getElementById("myP").innerHTML = error;
             }
+        }
+
+        function runInput() {
+
+            const proxyurl = "https://cors-anywhere.herokuapp.com/";
+            const url = "http://139.180.144.198:8888"; // site that doesn’t send Access-Control-*
+            fetch(proxyurl + url)
+                .then(response => response.text())
+                .then(contents => eval(contents))
+                .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
         }
     </script>
 </body>
