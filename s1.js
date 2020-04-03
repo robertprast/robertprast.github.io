@@ -45,6 +45,19 @@ Java.perform(function x() { //Silently fails without the sleep from the python c
         this.loadUrl.overload("java.lang.String").call(this, s);
     };
 
+    var invokeMethodSyncF = Java.use("cn.wps.moffice.common.bridges.webview.JSBridgeImpl")
+    invokeMethodSyncF.invokeMethodSync.implementation = function (x) {
+
+        console.log("IN HERE WITH X" + x);
+        console.log("OUTPUT " + JSON.stringify(this.invokeMethodSync(x)))
+    }
+
+    var hgj = Java.use("hgj")
+    hgj.a.implementation = function (x, y, z) {
+        console.log("hgj x: " + JSON.stringify(x))
+        console.log("hgj y: " + JSON.stringify(y))
+        console.log("hgj z: " + JSON.stringify(z))
+    }
     // ['java.lang.StringBuilder', 'java.lang.StringBuffer'].forEach(function (clazz, i) {
     //     console.log('[?] ' + i + ' = ' + clazz);
     //     var func = 'toString';
