@@ -1,4 +1,30 @@
 console.log("Script loaded successfully ");
+//HELPER FUNCTIONS
+var printBacktrace = function () {
+    Java.perform(function () {
+        var JLog = Java.use('android.util.Log'), JException = Java.use('java.lang.Exception');
+        // getting stacktrace by throwing an exception
+        console.warn(JLog.getStackTraceString(JException.$new()));
+    });
+};
+//Inspect Java class
+var inspectClass = function(obj) {
+    var Class = Java.use("java.lang.Class");
+    var obj_class = Java.cast(obj.getClass(), Class);
+    var fields = obj_class.getDeclaredFields();
+    var methods = obj_class.getMethods();
+    console.log("Inspecting " + obj.getClass().toString());
+    console.log("\tFields:");
+    for (var i in fields)
+        console.log("\t\t" + fields[i].toString());
+    console.log("\tMethods:");
+    for (var i in methods)
+        console.log("\t\t" + methods[i].toString());
+}
+
+
+
+
 Java.perform(function x() { //Silently fails without the sleep from the python code
     console.log("Inside java perform function");
 
@@ -27,7 +53,7 @@ Java.perform(function x() { //Silently fails without the sleep from the python c
 
     var gzg = Java.use("gzg");
     gzg.J.implementation = function (x, y) {
-        console.log("IN gzg with int value of " + x + " and str val of " + y)
+        //console.log("IN gzg with int value of " + x + " and str val of " + y)
         // console.log(JSON.stringify(this.J(x,y)))
     };
 
@@ -45,13 +71,37 @@ Java.perform(function x() { //Silently fails without the sleep from the python c
         this.loadUrl.overload("java.lang.String").call(this, s);
     };
 
+    // var js = Java.use("android.webkit.WebView");
+    // js.evaluateJavascript.overload("java.lang.String").implementation = function (s,x) {
+    //     console.log("evaluateJavascript: " + s.toString())
+    //     return this.evaluateJavascript(s,x);
+    // };
+
     var invokeMethodSyncF = Java.use("cn.wps.moffice.common.bridges.webview.JSBridgeImpl")
     invokeMethodSyncF.invokeMethodSync.implementation = function (x) {
-
-        console.log("IN HERE WITH X" + x);
+        printBacktrace()
+        console.log("IN METHODSYNC WITH X" + x);
         console.log("OUTPUT " + JSON.stringify(this.invokeMethodSync(x)))
+        return this.invokeMethodSync(x)
     }
 
+
+    Java.choose("cn.wps.moffice.common.bridges.webview.JSBridgeImpl", {
+        onMatch: function (instance) { //This function will be called for every instance found by frida
+            console.log("Found instance: " + instance);
+            inspectClass(instance)
+        },
+        onComplete: function () { }
+    });
+    
+
+
+
+    var initF = Java.use("cn.wps.moffice.common.bridges.webview.JSBridgeImpl")
+    initF.initJsSDK.implementation = function () {
+        console.log("HERE IN INIT!")
+        return this.initJsSDK();
+    }
     var hgj = Java.use("hgj")
     hgj.a.implementation = function (x, y, z) {
         console.log("hgj x: " + JSON.stringify(x))
@@ -76,4 +126,6 @@ Java.perform(function x() { //Silently fails without the sleep from the python c
     // });
 
 });
+
+
 
