@@ -10,23 +10,24 @@ Java.perform(function x() { //Silently fails without the sleep from the python c
 
     var dgw = Java.use("dgw");
     dgw.jR.implementation = function (x) {
-        console.log("IN DGW with str value of "+x)
+        console.log("IN DGW with str value of " + x)
         console.log(x)
         console.log(this.jR(x))
-        x="https://robertprast.github.io\\@wps.com"
-        console.log(x)
-        console.log(this.jR(x))
-        x="https://robertprast.github.io%5C%5C@wps.com"
-        console.log(x)
-        console.log(this.jR(x))
-        x="sdfsdfwps.com"
-        console.log(this.jR(x))
+        return this.jR(x)
+        // x = "https://robertprast.github.io\\@wps.com"
+        // console.log(x)
+        // console.log(this.jR(x))
+        // x = "https://robertprast.github.io%5C%5C@wps.com"
+        // console.log(x)
+        // console.log(this.jR(x))
+        // x = "sdfsdfwps.com"
+        // console.log(this.jR(x))
     };
 
 
     var gzg = Java.use("gzg");
-    gzg.J.implementation = function (x,y) {
-        console.log("IN gzg with int value of "+x+" and str val of "+y)
+    gzg.J.implementation = function (x, y) {
+        console.log("IN gzg with int value of " + x + " and str val of " + y)
         // console.log(JSON.stringify(this.J(x,y)))
     };
 
@@ -36,5 +37,13 @@ Java.perform(function x() { //Silently fails without the sleep from the python c
     // OnlineParamProtoBuf.a.overload("T t, byte[] bArr").implementation = function (y,x) {
     //     console.log("IN OnlineParamtools with int value of "+x)
     // };
+
+
+    var WebView = Java.use("android.webkit.WebView");
+    WebView.loadUrl.overload("java.lang.String").implementation = function (s) {
+        console.log("URL: "+s.toString())
+        this.loadUrl.overload("java.lang.String").call(this, s);
+    };
+
 });
 
