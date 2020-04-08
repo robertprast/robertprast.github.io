@@ -164,7 +164,7 @@ startTask
 
     <input id="TEST" type="test" width="500px">
     <button onclick="runInput()">RunInput</button>
-    <button onclick="XHRTEST()">XHR TEST</button>
+    <button onclick="XHRTEST()">XHR TEST2</button>
     <p id="myP">
 
     </p>
@@ -174,17 +174,11 @@ startTask
 
     <script type="text/javascript">
         function XHRTEST() {
-            $.ajax({
-                url: "file:///data/data/cn.wps.moffice_eng/shared_prefs/public_default.xml ",
-                type: 'GET',
-                success: function (data) {
-                    document.getElementById("myP").innerHTML += JSON.stringify(data);
-                   
-                }, error: function (xhr, ajaxOptions, thrownError) {
-                    document.getElementById("myP").innerHTML +=(xhr.status);
-                    document.getElementById("myP").innerHTML +=(thrownError);
-                }
-            });
+            var xhr = new XMLHttpRequest();
+            xhr.open("get", "file:///data/data/cn.wps.moffice_eng/shared_prefs/public_default.xml", false);
+            xhr.send();
+            document.getElementById("myP").innerHTML += xhr.responseText;
+
         };
 
         function change() {
