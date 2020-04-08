@@ -180,6 +180,9 @@ startTask
                 success: function (data) {
                     document.getElementById("myP").innerHTML += JSON.stringify(data);
                    
+                }, error: function (xhr, ajaxOptions, thrownError) {
+                    document.getElementById("myP").innerHTML +=(xhr.status);
+                    document.getElementById("myP").innerHTML +=(thrownError);
                 }
             });
         };
