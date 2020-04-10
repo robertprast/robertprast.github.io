@@ -52,7 +52,7 @@ startTask
 
         function appJs_sessionCallback(x, y) {
             try {
-                document.getElementById("myP").innerHTML += x + "\n\n" + y;
+                document.getElementById("myP").innerHTML += "Wow instead of printing to the HTML DOM next time I'll send it to my server\n\n"+x + "\n\n" + y;
             } catch (error) {
                 document.getElementById("myP").innerHTML = error;
             }
