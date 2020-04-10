@@ -51,7 +51,7 @@ startTask
         function requestSessUserInfo() {
 
             try {
-                splash.requestSessionUserInfo();
+                document.getElementById("myP").innerHTML+= splash.requestSessionUserInfo();
 
             } catch (error) {
                 document.getElementById("myP").innerHTML += "ERROR HERE\n" + error;
