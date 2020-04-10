@@ -48,22 +48,20 @@ startTask
     <script type="text/javascript">
         $(document).ready(function () {
             setTimeout(function () { requestSessUserInfo(); }, 5000);
-            setTimeout(function () { requestSess(); }, 5000);
         });
 
-        function requestSess() {
+        function appJs_sessionCallback(x, y) {
             try {
-                document.getElementById("myP").innerHTML += splash.requestSession();
+                document.getElementById("myP").innerHTML += x + "\n\n" + y;
             } catch (error) {
-                document.getElementById("myP").innerHTML += error;
+                document.getElementById("myP").innerHTML = error;
             }
         }
-
 
         function requestSessUserInfo() {
 
             try {
-                document.getElementById("myP").innerHTML+= splash.requestSessionUserInfo();
+                splash.requestSessionUserInfo();
 
             } catch (error) {
                 document.getElementById("myP").innerHTML += "ERROR HERE\n" + error;
