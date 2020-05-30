@@ -8,10 +8,10 @@ def my_message_handler(message, payload):
 
 
 device = frida.get_usb_device()
-# pid = device.attach("cn.wps.moffice_eng")
+# pid = device.spawn("cn.wps.moffice_eng")
 # device.resume(pid)
 time.sleep(1)  # Without it Java.perform silently fails
-session = device.attach(25057)
+session = device.attach("cn.wps.moffice_eng")
 with open("s1.js") as f:
     script = session.create_script(f.read())
 script.on("message" , my_message_handler)
